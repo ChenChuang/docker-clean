@@ -115,10 +115,10 @@ function parseCli(){
 		key="$1"
 		val="$2"
 		case $key in
-			stop ) STOP_CONTAINERS=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=true; CLEAN_NETWORKS=true ;;
-			images ) DELETE_TAGGED=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=true; CLEAN_NETWORKS=true ;;
+			stop ) STOP_CONTAINERS=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=false; CLEAN_NETWORKS=true ;;
+			images ) DELETE_TAGGED=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=false; CLEAN_NETWORKS=true ;;
 			run ) CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=true; CLEAN_NETWORKS=true ;;
-			all ) STOP_CONTAINERS=true; DELETE_TAGGED=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=true; CLEAN_VOLUMES=true; CLEAN_NETWORKS=true ;;
+			all ) STOP_CONTAINERS=true; DELETE_TAGGED=true; CLEAN_CONTAINERS=true; CLEAN_IMAGES=false; CLEAN_VOLUMES=true; CLEAN_NETWORKS=true ;;
 			-H | --host) DOCKER_HOST=$val; shift;;
 			-s | --stop) STOP_CONTAINERS=true ;;
 			-n | --dry-run) DRY_RUN=true ;;
